@@ -29,22 +29,20 @@ import faiss
 
 dimension = sentence_embeddings.shape[1]
 
-index = faiss.IndexFlatL2(dimension)
-index.add(sentence_embeddings)
-
-# quantizer = faiss.IndexFlatL2(dimension)
-# nlist = 5
-# index = faiss.IndexIVFFlat(quantizer, dimension, nlist)
-# index.train(sentence_embeddings)
+# index = faiss.IndexFlatL2(dimension)
 # index.add(sentence_embeddings)
-# index.nprobe = 3
+
+quantizer = faiss.IndexFlatL2(dimension)
+nlist = 10
+index = faiss.IndexIVFFlat(quantizer, dimension, nlist)
+index.train(sentence_embeddings)
+index.add(sentence_embeddings)
+index.nprobe = 3
 
 # print(index.ntotal)
 
-topK = 3
 search = model.encode(["太阳炸了"])
-
-D, I = index.search(search, topK)
+D, I = index.search(search, 3)
 print(df["sentence"].iloc[I[0]])
 
 ####################
@@ -55,7 +53,10 @@ import time
 costs = []
 for x in range(10000):
     t0 = time.time()
-    D, I = index.search(search, topK)
+    D, I = index.search(search, 3)
     t1 = time.time()
     costs.append(t1 - t0)
-print("平均耗时 %7.3f ms" % ((sum(costs) / len(costs)) * 1000.0)) # 0.052 ms
+print("平均耗时 %7.3f ms" % ((sum(costs) / len(costs)) * 1000.0))
+
+# 0.052 ms
+# 0.018 ms
