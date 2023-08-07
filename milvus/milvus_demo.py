@@ -1,5 +1,3 @@
-# Doc: https://soulteary.com/2022/09/03/vector-database-guide-talk-about-the-similarity-retrieval-technology-from-metaverse-big-company-faiss.html
-
 import pandas as pd
 import os
 
@@ -105,6 +103,3 @@ for x in range(10000):
     t1 = time.time()
     costs.append(t1 - t0)
 print("平均耗时 %7.3f ms" % ((sum(costs) / len(costs)) * 1000.0))
-
-# 12.115 ms
-# 10.889 ms

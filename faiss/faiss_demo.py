@@ -1,5 +1,3 @@
-# Doc: https://soulteary.com/2022/09/03/vector-database-guide-talk-about-the-similarity-retrieval-technology-from-metaverse-big-company-faiss.html
-
 import pandas as pd
 import os
 
