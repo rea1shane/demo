@@ -57,6 +57,3 @@ for x in range(10000):
     t1 = time.time()
     costs.append(t1 - t0)
 print("平均耗时 %7.3f ms" % ((sum(costs) / len(costs)) * 1000.0))
-
-# 0.052 ms
-# 0.018 ms
