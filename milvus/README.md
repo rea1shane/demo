@@ -1,10 +1,9 @@
 # Milvus
 
-```shell
-conda create --name milvus python=3.8 -y
-pip install pymilvus==2.2.12
-```
+[网站](https://milvus.io/) | [GitHub](https://github.com/milvus-io/milvus)
 
-参考文档：
+向量数据库。
+
+## 参考链接
 
 - [Run Milvus using Python Milvus documentation](https://milvus.io/docs/example_code.md)
