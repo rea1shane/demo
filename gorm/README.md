@@ -1,6 +1,6 @@
 # GORM
 
-[网站](https://gorm.io/) | [GitHub](https://github.com/go-gorm/gorm) | [文档] (https://gorm.io/zh_CN/docs/)
+[网站](https://gorm.io/) | [GitHub](https://github.com/go-gorm/gorm) | [文档](https://gorm.io/zh_CN/docs/)
 
 数据库框架。
 
